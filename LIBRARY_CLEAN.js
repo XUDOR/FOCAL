@@ -22,12 +22,7 @@ const library = {
   }
   }
 };
-const key1 = "tracks";
-console.table(library);
-console.log(library[key1]["t03"]["album"]);
-console.log(library["tracks"]["t03"]["album"]);
 
-console.log(library.tracks.t03.album);
 /////////////////////////////
 // FUNCTIONS TO IMPLEMENT:
 /////////////////////////////
@@ -35,69 +30,77 @@ console.log(library.tracks.t03.album);
 // prints a list of all playlists, in the form:
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
-const printPlaylists = function() {
-       for (let playlist in library.playlists) {
-              let p = library.playlists[playlist];
-              console.log(`${p.id}: ${p.name} - ${p.tracks.length} tracks`);
-            }
-}
-//printPlaylists(); //DONE
-//-----------------
+const printPlaylists = function(lib) {
+  const playlists = lib.playlists;      // get playlist
+  for (const playKey in playlists) {
+    const playlist = playlists[playKey];
+    //console.log(playlist);
+    const name = playlist.name;
+    //console.log(name);
+    const tracks = playlist.tracks;
+    //console.log(tracks);
+    const numOfTracks = tracks.length;
+    //console.log(numOfTracks);
+    console.log(`${playKey}: ${name} - ${numOfTracks} tracks`);
+
+
+  };
+ // console.log(playlist);
+
+};
+
+printPlaylists(library);
+
+
+
 // prints a list of all tracks, using the following format:
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 // t03: Four Thirty-Three by John Cage (Woodstock 1952)
 const printTracks = function() {
-       for (let track in library.tracks) {
-              let t = library.tracks[track];
-              console.log(`${t.id}: ${t.name}- ${t.artist}`);
-       }
-       
-}
-// printTracks(); //DONE
-//---------------
+
+};
+
+
 // prints a list of tracks for a given playlist, using the following format:
 // p01: Coding Music - 2 tracks
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
-
 const printPlaylist = function(playlistId) {
-              console.table(library.playlists.p01);
-}
 
-printPlaylist() // KINDA STUCK >.. here though I am looking
-// at figuring out how to de-structure the object so I can re assemble it... putting things in arrays
-//------------------------------------
+};
+
+
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function(trackId, playlistId) {
 
-}
+};
 
 
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
 const generateUid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-}
+};
 
 
 // adds a track to the library
 const addTrack = function(name, artist, album) {
 
-}
+};
 
 
 // adds a playlist to the library
 const addPlaylist = function(name) {
 
-}
+};
 
 
 // STRETCH:
 // given a query string string, prints a list of tracks
 // where the name, artist or album contains the query string (case insensitive)
-// tip: use "string".search("tri") 
+// tip: use "string".search("tri")
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 const printSearchResults = function(query) {
 
-}
+};
